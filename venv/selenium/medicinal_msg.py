@@ -33,17 +33,17 @@ try:
     #print(type(tbodyXml))
     #print(str(tbodyXml))
     #print(tbodyXml.text)
-    # list1 = tbodyXml.find_elements_by_tag_name("tr")[0]
-    # col1 = list1.find_elements_by_tag_name("th")[0:]
-    # line1 = ''
-    # for col in col1:
-    #     line1 = line1 + '"' + col.text + '",'
-    # line1 = line1[:-1]
-    # line1 = line1 + '\n'
-    # with open('page_msg.csv', 'a+', encoding='utf-8') as f1:  # 一次性安全写数据到文件
-    #     f1.writelines(line1)
+    list1 = tbodyXml.find_elements_by_tag_name("tr")[0]
+    col1 = list1.find_elements_by_tag_name("th")[0:]
+    line1 = ''
+    for col in col1:
+        line1 = line1 + '"' + col.text + '",'
+    line1 = line1[:-1]
+    line1 = line1 + '\n'
+    with open('page_msg.csv', 'a+', encoding='utf-8') as f1:  # 一次性安全写数据到文件
+        f1.writelines(line1)
 
-    num = 268
+    num = 1
     while(num <3857):
         xpathStr = '//*[@id="AspNetPager1_input"]'
         page_input = driver.find_element_by_xpath(xpathStr)
